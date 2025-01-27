@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>音声録音</title>
+  <style>
+    button {
+      margin: 10px;
+      padding: 8px 16px;
+    }
+    #timer {
+      font-size: 20px;
+      margin: 10px;
+      font-family: monospace;
+    }
+    .agenda-item {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .goals-container {
+      margin-left: 20px;
+    }
+    .goal-item {
+      margin: 5px 0;
+    }
+    button {
+      margin: 5px;
+    }
+    #result-area {
+      margin-top: 20px;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+    .result-item {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #eee;
+      border-radius: 5px;
+    }
+    .result-item h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+    .result-item ul {
+      margin: 5px 0;
+      padding-left: 20px;
+    }
+    .result-item li {
+      margin: 5px 0;
+    }
+    .goals-section {
+      margin-top: 10px;
+    }
+    .goals-section h5 {
+      margin: 5px 0;
+      color: #555;
+    }
+    .goal-condition {
+      font-weight: bold;
+      margin-bottom: 3px;
+    }
+    .goal-status {
+      color: #666;
+      margin-bottom: 3px;
+    }
+    .goal-result {
+      font-size: 0.9em;
+      color: #666;
+      margin-left: 10px;
+      font-style: italic;
+    }
+    .collapsible {
+      background-color: #f1f1f1;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      margin: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .collapsible:after {
+      content: '▲';
+      font-size: 13px;
+      color: #666;
+    }
+    .collapsible.active:after {
+      content: '▼';
+    }
+    .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background-color: white;
+    }
+    .content.show {
+      max-height: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <button id="startRecording">録音開始</button>
+  <button id="stopRecording" disabled>録音停止</button>
+  <div id="timer">00:00</div>
+
+  <button class="collapsible">アジェンダ設定</button>
+  <div class="content show" id="agenda-form">
+    <div id="agenda-items"></div>
+    <button id="addAgenda">アジェンダを追加</button>
+    <button id="saveAgenda">アジェンダを保存</button>
+  </div>
+
+  <button class="collapsible">会議分析結果</button>
+  <div class="content" id="result-area">
+    <div id="result-content"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

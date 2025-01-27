@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "facilitator",
+  "version": "1.1",
+  "icons": {
+    "256": "icons/inspiration_256.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabCapture",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://agenda-api-171753805737.asia-northeast1.run.app/*"
+  ]
+}
