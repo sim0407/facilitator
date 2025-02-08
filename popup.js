@@ -142,11 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
           try {
             // APIにデータをPOST
-            const response = await fetch('https://agenda-api-171753805737.asia-northeast1.run.app/agenda', {
+            const response = await fetch('https://facilitation-api-171753805737.asia-northeast1.run.app/agenda', {
               method: 'POST',
               body: formData,
               headers: {
                 'accept': 'application/json',
+                'key': '1234567890'
               },
               mode: 'cors'
             });
